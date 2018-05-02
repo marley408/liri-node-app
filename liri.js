@@ -18,7 +18,7 @@ var spotify = new Spotify(keys.spotify);
 
 function spotifyIt(songName) {
   if(songName.length === 0){
-    songName = 'all the small things'
+    songName = 'all the small things' //if no song is provided
   }
   return spotify.search({ type: 'track', query: songName, limit:5 }, function(err, data) {
     // console.log(err, data)
