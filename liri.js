@@ -108,25 +108,7 @@ function readAndrun(){
     const args = data.split(',');
     var command = args[0];
     const argument = args[1];
-    // var spotify = new Spotify(keys.spotify);
-
-    // console.log(command, argument);
-
-    // if (command === 'spotify-this-song'){
-    //   spotify.search({ type: 'track', query: argument, limit:5 }, function(err, data){
-    //     if(err){
-    //       return console.log('Error occurred: ' + err)
-    //     }
-    //     else{
-    //       var songInfo = data.tracks.items[0]
-    //       console.log(songInfo.artists[0].name)
-    //       console.log(songInfo.name)
-    //       console.log(songInfo.album.name)
-    //       console.log(songInfo.preview_url)
-    //     }
-    //   })
-    // }
-    
+       
     switch (command) {
       case 'spotify-this-song':
         spotifyIt(argument);
