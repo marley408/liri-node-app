@@ -1,0 +1,4 @@
+Command Log: 
+movie-this
+spotify-this-song
+spotify-this-song

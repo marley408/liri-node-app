@@ -126,15 +126,35 @@ function readAndrun(){
   switch (command) {
     case 'spotify-this-song':
       spotifyIt(songName);
+      fs.appendFile('log.txt', '\nspotify-this-song', function(err){
+        if(err){
+          console.log(err)
+        }
+      })
       break;
     case 'my-tweets':
       myTweets();
+      fs.appendFile('log.txt', '\nmy-tweets', function(err){
+        if(err){
+          console.log(err)
+        }
+      })
       break;
     case 'do-what-it-says':
       readAndrun();
+      fs.appendFile('log.txt', '\ndo-what-it-says', function(err){
+        if(err){
+          console.log(err)
+        }
+      })
       break;
     case 'movie-this':
       movieInfo();
+      fs.appendFile('log.txt', '\nmovie-this', function(err){
+        if(err){
+          console.log(err)
+        }
+      })
       break;
     default:
       break;
