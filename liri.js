@@ -18,7 +18,7 @@ var spotify = new Spotify(keys.spotify);
 
 function spotifyIt(songName) {
   if(songName.length === 0){
-    songName = 'all the small things' //if no song is provided
+    songName = 'come together' //if no song is provided
   }
   return spotify.search({ type: 'track', query: songName, limit:5 }, function(err, data) {
     // console.log(err, data)
@@ -60,9 +60,9 @@ var request = require("request")
 var nodeArgs = process.argv
 
 
+var movieName = ""
 function movieInfo(){ 
   // Grab or assemble the movie name and store it in a variable called "movieName"
-  var movieName = ""
   
   // loop thru words in node arg. ignoring the first three Node arguments with var i = 3
   for(var i =3; i <nodeArgs.length; i++){
@@ -149,10 +149,14 @@ function readAndrun(){
       })
       break;
     case 'movie-this':
-      movieInfo();
-      fs.appendFile('log.txt', '\nmovie-this', function(err){
-        if(err){
+    fs.appendFile('log.txt', '\nmovie-this', function(err){
+      if(nodeArgs[3]){
+        movieInfo();
           console.log(err)
+        }
+        else{
+          movieName = 'Mr. Nobody'
+          movieInfo()
         }
       })
       break;
